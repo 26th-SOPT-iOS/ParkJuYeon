@@ -118,11 +118,41 @@ extension LoginViewController {
 override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }   
-```   
-<br/>   
+```     
 
 #### <ScrollView화면>   
 ##### viewController 사이즈를 Freeform으로 변경하지 않고, ScrollView안에 있는 view크기를 늘림.   
-##### 애니메이션 진행중~~~
+
+<br/>   
+
+## 3st Assignment   
+### TableView   
+#### 1. tableView cell 라인 없애기   
+##### viewDidLoad에 코드 한줄만 추가해주면 된당   
+```swift   
+self.friendTableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+```   
+<br/>   
+
+#### 2. Swipe to delete   
+<img width="200" src = "https://user-images.githubusercontent.com/55732968/81819800-c1e05d00-956a-11ea-986a-c2d06782647f.png">   
+
+##### 스와이프 후 delete를 눌러, 해당 셀을 삭제하기 위해 아래와 같은 함수를 작성한다.   
+
+```swift   
+
+func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath){
+        
+        if(editingStyle == .delete){
+            friendInformations.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .bottom)
+            
+        }
+    }
+```
 
 
