@@ -11,6 +11,7 @@ import UIKit
 class FriendViewController: UIViewController {
     
     @IBOutlet weak var friendTableView: UITableView!
+    @IBOutlet weak var settingImg: UIImageView!
     
     private var friendInformations: [FriendInformation] = []
     
@@ -21,9 +22,34 @@ class FriendViewController: UIViewController {
         friendTableView.dataSource = self
         friendTableView.delegate = self
         
+        self.friendTableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+
+       
     }
     
-    private func setfriendInformations(){
+    func showAlert(style: UIAlertController.Style){
+        let optionMenu = UIAlertController(title: nil, message: "Choose Option", preferredStyle: style)
+        
+        let deleteAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        
+        let friendAction = UIAlertAction(title: "친구 관리", style: .default, handler: {(alert: UIAlertAction!) -> Void in})
+        
+        let settingAction = UIAlertAction(title: "전체 설정", style: .default, handler: {(alert: UIAlertAction!) -> Void in})
+        
+        optionMenu.addAction(deleteAction)
+        optionMenu.addAction(friendAction)
+        optionMenu.addAction(settingAction)
+        
+        self.present(optionMenu, animated: true, completion: nil)
+    }
+    
+    @IBAction func settingBtn(_ sender: Any) {
+        
+        showAlert(style: .actionSheet)
+    
+    }
+    
+        private func setfriendInformations(){
         let friend1 = FriendInformation(friend: .cat, name: "냥냥이", title: "애옹애오애옹애옹")
         let friend2 = FriendInformation(friend: .dog, name: "강아지", title: "왈왈!!멍멍ㅇ머머!왋멍!")
         let friend3 = FriendInformation(friend: .cat, name: "냥냥이", title: "애옹애오애옹애옹")
@@ -48,6 +74,8 @@ class FriendViewController: UIViewController {
         friendInformations = [friend1, friend2, friend3, friend4, friend5, friend6, friend7, friend8, friend9, friend10, friend11, friend12, friend13, friend14, friend15, friend16, friend17, friend18, friend19, friend20]
         
     }
+    
+    
 }
 extension FriendViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -77,10 +105,11 @@ extension FriendViewController: UITableViewDataSource {
             
         }
     }
+    
+    
 }
 
 extension FriendViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 62 }
 }
-

@@ -581,6 +581,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="6LU-eq-ib5" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ezx-2m-Jhc">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -686,12 +687,23 @@
                                 <color key="textColor" red="0.15294117647058825" green="0.15294117647058825" blue="0.15294117647058825" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qtv-G9-2Yb">
+                                <rect key="frame" x="339" y="60" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="YiK-FW-R0U"/>
+                                    <constraint firstAttribute="height" constant="20" id="bLA-Tn-e1b"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="settingBtn:" destination="3AA-ym-grE" eventType="touchUpInside" id="vSf-Yg-JpP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Vhu-uM-PWt" firstAttribute="leading" secondItem="4cC-m0-CI1" secondAttribute="leading" constant="16" id="0RF-5s-Z8g"/>
                             <constraint firstItem="RaT-v2-deJ" firstAttribute="leading" secondItem="4cC-m0-CI1" secondAttribute="leading" id="4dm-9B-GnI"/>
                             <constraint firstItem="RaT-v2-deJ" firstAttribute="top" secondItem="Vhu-uM-PWt" secondAttribute="bottom" id="7QW-T4-LsD"/>
+                            <constraint firstItem="4cC-m0-CI1" firstAttribute="trailing" secondItem="qtv-G9-2Yb" secondAttribute="trailing" constant="16" id="857-Ve-VNe"/>
                             <constraint firstItem="RaT-v2-deJ" firstAttribute="bottom" secondItem="4cC-m0-CI1" secondAttribute="bottom" id="8oV-ht-tFZ"/>
                             <constraint firstAttribute="trailing" secondItem="5qw-1f-bPv" secondAttribute="trailing" constant="14.33" id="9s4-cT-mUN"/>
                             <constraint firstItem="Ym1-eB-RCN" firstAttribute="top" secondItem="Pts-D4-hPi" secondAttribute="bottom" constant="17" id="Ggx-4r-QsD"/>
@@ -700,6 +712,7 @@
                             <constraint firstItem="DY8-IG-dPq" firstAttribute="top" secondItem="4cC-m0-CI1" secondAttribute="top" constant="16" id="Mq5-Rl-SAr"/>
                             <constraint firstItem="5qw-1f-bPv" firstAttribute="top" secondItem="Ym1-eB-RCN" secondAttribute="bottom" constant="15.67" id="Mso-aW-Zz8"/>
                             <constraint firstItem="5qw-1f-bPv" firstAttribute="leading" secondItem="Mvi-UG-1s5" secondAttribute="leading" constant="15.67" id="WaJ-Cs-YzM"/>
+                            <constraint firstItem="qtv-G9-2Yb" firstAttribute="top" secondItem="4cC-m0-CI1" secondAttribute="top" constant="16" id="WyU-iW-kYb"/>
                             <constraint firstItem="RaT-v2-deJ" firstAttribute="bottom" secondItem="4cC-m0-CI1" secondAttribute="bottom" id="aob-Hn-RDb"/>
                             <constraint firstItem="Vhu-uM-PWt" firstAttribute="top" secondItem="5qw-1f-bPv" secondAttribute="bottom" constant="8.3300000000000001" id="bhS-FO-CYm"/>
                             <constraint firstItem="DY8-IG-dPq" firstAttribute="leading" secondItem="Pts-D4-hPi" secondAttribute="trailing" constant="284" id="din-i3-mV8"/>
@@ -719,6 +732,7 @@
                     </tabBarItem>
                     <connections>
                         <outlet property="friendTableView" destination="RaT-v2-deJ" id="DnJ-ec-iRb"/>
+                        <outlet property="settingImg" destination="DY8-IG-dPq" id="7h4-Sj-vrl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7us-0k-NLp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
