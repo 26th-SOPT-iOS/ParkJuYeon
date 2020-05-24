@@ -66,17 +66,13 @@ extension UIButton {
 ##### 텍스트 필드를 누르면 키보드가 올라가고, 화면의 빈 여백을 누르면 키보드가 내려간다.   
 ###### 이미지, 텍스트필드, 라벨, 버튼 등 올라가야 할 것들을 한꺼번에 view안에 담아뒀다.   
 ```swift
-extension LoginViewController: UITextFieldDelegate{
-
-// UITextFieldDelegate 생성하기
-// 아래 두줄을 viewDidLoad함수안에 적어야 하므로..
-// emailTextField.delegate = self
-// pwTextField.delegate = self 
-
-}
-
 // viewDidLoad에 addKeyboardObserver() 적기!
-extension LoginViewController {
+// UITextFieldDelegate 생성하기
+// viewDidLoad함수안에   
+// emailTextField.delegate = self
+// pwTextField.delegate = self   
+
+extension LoginViewController: UITextFieldDelegate {
     
     private func addKeyboardObserver() {
         
