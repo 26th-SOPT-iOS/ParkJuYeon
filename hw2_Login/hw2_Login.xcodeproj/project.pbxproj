@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,9 +15,16 @@
 		7F2A49C02459B016000AD982 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F2A49BE2459B016000AD982 /* LaunchScreen.storyboard */; };
 		7F2A49CB2459EC25000AD982 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2A49CA2459EC25000AD982 /* MainViewController.swift */; };
 		7F2A49CD2459EC97000AD982 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2A49CC2459EC97000AD982 /* SignupViewController.swift */; };
+		7F4564F1246FBBC7007D52D7 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4564F0246FBBC7007D52D7 /* APIConstants.swift */; };
+		7F4564F3246FBCA4007D52D7 /* SigninData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4564F2246FBCA4007D52D7 /* SigninData.swift */; };
+		7F4564F5246FBD9C007D52D7 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4564F4246FBD9C007D52D7 /* NetworkResult.swift */; };
+		7F4564F7246FC51D007D52D7 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4564F6246FC51D007D52D7 /* LoginService.swift */; };
+		7F4564FA246FD707007D52D7 /* SignupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4564F9246FD707007D52D7 /* SignupService.swift */; };
+		7F4564FC246FD71B007D52D7 /* SignupData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4564FB246FD71B007D52D7 /* SignupData.swift */; };
 		7FAB933D246C06A800DC192A /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAB933C246C06A800DC192A /* FriendViewController.swift */; };
 		7FAB933F246C10B700DC192A /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAB933E246C10B700DC192A /* FriendCell.swift */; };
 		7FAB9341246C12A000DC192A /* FriendInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAB9340246C12A000DC192A /* FriendInformation.swift */; };
+		EC6591ABB3C003C6D340722C /* Pods_hw2_Login.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E66AAE4F888607E3258558C5 /* Pods_hw2_Login.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,9 +38,18 @@
 		7F2A49C12459B016000AD982 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F2A49CA2459EC25000AD982 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		7F2A49CC2459EC97000AD982 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		7F4564F0246FBBC7007D52D7 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		7F4564F2246FBCA4007D52D7 /* SigninData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninData.swift; sourceTree = "<group>"; };
+		7F4564F4246FBD9C007D52D7 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
+		7F4564F6246FC51D007D52D7 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		7F4564F9246FD707007D52D7 /* SignupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupService.swift; sourceTree = "<group>"; };
+		7F4564FB246FD71B007D52D7 /* SignupData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupData.swift; sourceTree = "<group>"; };
 		7FAB933C246C06A800DC192A /* FriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FriendViewController.swift; path = hw2_Login/Resources/FriendViewController.swift; sourceTree = SOURCE_ROOT; };
 		7FAB933E246C10B700DC192A /* FriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FriendCell.swift; path = hw2_Login/Resources/FriendCell.swift; sourceTree = SOURCE_ROOT; };
 		7FAB9340246C12A000DC192A /* FriendInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FriendInformation.swift; path = hw2_Login/Resources/FriendInformation.swift; sourceTree = SOURCE_ROOT; };
+		B12A824AD73BEDB007539947 /* Pods-hw2_Login.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hw2_Login.debug.xcconfig"; path = "Target Support Files/Pods-hw2_Login/Pods-hw2_Login.debug.xcconfig"; sourceTree = "<group>"; };
+		D278764AF9D22ECF48ADADF2 /* Pods-hw2_Login.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hw2_Login.release.xcconfig"; path = "Target Support Files/Pods-hw2_Login/Pods-hw2_Login.release.xcconfig"; sourceTree = "<group>"; };
+		E66AAE4F888607E3258558C5 /* Pods_hw2_Login.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hw2_Login.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,17 +57,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC6591ABB3C003C6D340722C /* Pods_hw2_Login.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		589B4670FF3567A2424A6FDF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E66AAE4F888607E3258558C5 /* Pods_hw2_Login.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7F2A49A72459B015000AD982 = {
 			isa = PBXGroup;
 			children = (
 				7F2A49B22459B015000AD982 /* hw2_Login */,
 				7F2A49B12459B015000AD982 /* Products */,
+				F692D32F3BAD5632E04107EB /* Pods */,
+				589B4670FF3567A2424A6FDF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,10 +93,10 @@
 		7F2A49B22459B015000AD982 /* hw2_Login */ = {
 			isa = PBXGroup;
 			children = (
-				7F2A49C82459B02A000AD982 /* Sources */,
 				7F2A49C72459B020000AD982 /* Resources */,
-				7F2A49B32459B015000AD982 /* AppDelegate.swift */,
-				7F2A49B52459B015000AD982 /* SceneDelegate.swift */,
+				7F4564EF246FADFE007D52D7 /* Sources */,
+				7F4564EE246FAD7F007D52D7 /* Storyboards */,
+				7F2A49C82459B02A000AD982 /* ViewControllers */,
 				7F2A49C12459B016000AD982 /* Info.plist */,
 			);
 			path = hw2_Login;
@@ -78,14 +105,13 @@
 		7F2A49C72459B020000AD982 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				7F2A49B92459B015000AD982 /* Main.storyboard */,
+				7F4564F8246FD2CC007D52D7 /* API */,
 				7F2A49BC2459B016000AD982 /* Assets.xcassets */,
-				7F2A49BE2459B016000AD982 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		7F2A49C82459B02A000AD982 /* Sources */ = {
+		7F2A49C82459B02A000AD982 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				7FAB9340246C12A000DC192A /* FriendInformation.swift */,
@@ -95,7 +121,47 @@
 				7F2A49B72459B015000AD982 /* LoginViewController.swift */,
 				7F2A49CC2459EC97000AD982 /* SignupViewController.swift */,
 			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		7F4564EE246FAD7F007D52D7 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				7F2A49B92459B015000AD982 /* Main.storyboard */,
+				7F2A49BE2459B016000AD982 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		7F4564EF246FADFE007D52D7 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				7F2A49B32459B015000AD982 /* AppDelegate.swift */,
+				7F2A49B52459B015000AD982 /* SceneDelegate.swift */,
+			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		7F4564F8246FD2CC007D52D7 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				7F4564F0246FBBC7007D52D7 /* APIConstants.swift */,
+				7F4564F9246FD707007D52D7 /* SignupService.swift */,
+				7F4564FB246FD71B007D52D7 /* SignupData.swift */,
+				7F4564F2246FBCA4007D52D7 /* SigninData.swift */,
+				7F4564F4246FBD9C007D52D7 /* NetworkResult.swift */,
+				7F4564F6246FC51D007D52D7 /* LoginService.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		F692D32F3BAD5632E04107EB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B12A824AD73BEDB007539947 /* Pods-hw2_Login.debug.xcconfig */,
+				D278764AF9D22ECF48ADADF2 /* Pods-hw2_Login.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -105,9 +171,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7F2A49C42459B016000AD982 /* Build configuration list for PBXNativeTarget "hw2_Login" */;
 			buildPhases = (
+				2B2413FF439B7F3B8E78BAA3 /* [CP] Check Pods Manifest.lock */,
 				7F2A49AC2459B015000AD982 /* Sources */,
 				7F2A49AD2459B015000AD982 /* Frameworks */,
 				7F2A49AE2459B015000AD982 /* Resources */,
+				CC3F05FB2D833162E39F3F43 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -164,16 +232,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2B2413FF439B7F3B8E78BAA3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-hw2_Login-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CC3F05FB2D833162E39F3F43 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-hw2_Login/Pods-hw2_Login-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-hw2_Login/Pods-hw2_Login-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-hw2_Login/Pods-hw2_Login-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7F2A49AC2459B015000AD982 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				7FAB9341246C12A000DC192A /* FriendInformation.swift in Sources */,
+				7F4564FC246FD71B007D52D7 /* SignupData.swift in Sources */,
 				7FAB933F246C10B700DC192A /* FriendCell.swift in Sources */,
+				7F4564F5246FBD9C007D52D7 /* NetworkResult.swift in Sources */,
 				7FAB933D246C06A800DC192A /* FriendViewController.swift in Sources */,
 				7F2A49B82459B015000AD982 /* LoginViewController.swift in Sources */,
 				7F2A49B42459B015000AD982 /* AppDelegate.swift in Sources */,
+				7F4564F3246FBCA4007D52D7 /* SigninData.swift in Sources */,
+				7F4564FA246FD707007D52D7 /* SignupService.swift in Sources */,
+				7F4564F7246FC51D007D52D7 /* LoginService.swift in Sources */,
+				7F4564F1246FBBC7007D52D7 /* APIConstants.swift in Sources */,
 				7F2A49CD2459EC97000AD982 /* SignupViewController.swift in Sources */,
 				7F2A49B62459B015000AD982 /* SceneDelegate.swift in Sources */,
 				7F2A49CB2459EC25000AD982 /* MainViewController.swift in Sources */,
@@ -318,6 +434,7 @@
 		};
 		7F2A49C52459B016000AD982 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B12A824AD73BEDB007539947 /* Pods-hw2_Login.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -336,6 +453,7 @@
 		};
 		7F2A49C62459B016000AD982 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D278764AF9D22ECF48ADADF2 /* Pods-hw2_Login.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
