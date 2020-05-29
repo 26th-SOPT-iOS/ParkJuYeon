@@ -13,13 +13,17 @@ class SignupViewController: UIViewController {
     
     @IBOutlet weak var backgroundView: UIView!
     
+    @IBOutlet weak var idTextField: UITextField!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var pwTextField: UITextField!
+    @IBOutlet weak var phoneTextField: UITextField!
     
+    @IBOutlet weak var idLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var pwLabel: UILabel!
+    @IBOutlet weak var phoneLabel: UILabel!
     
     @IBOutlet weak var completeBtn: UIButton!
     
@@ -28,18 +32,23 @@ class SignupViewController: UIViewController {
         super.viewDidLoad()
         addKeyboardObserver()
         
+        idTextField.delegate = self
+        pwTextField.delegate = self
         nameTextField.delegate = self
         emailTextField.delegate = self
-        pwTextField.delegate = self
+        phoneTextField.delegate = self
         
-        
+        self.idLabel.layer.cornerRadius = 20
+        self.pwLabel.layer.cornerRadius = 20
         self.nameLabel.layer.cornerRadius = 20
         self.emailLabel.layer.cornerRadius = 20
-        self.pwLabel.layer.cornerRadius = 20
+        self.phoneLabel.layer.cornerRadius = 20
         
+        idLabel.layer.masksToBounds = true
+        pwLabel.layer.masksToBounds = true
         nameLabel.layer.masksToBounds = true
         emailLabel.layer.masksToBounds = true
-        pwLabel.layer.masksToBounds = true
+        phoneLabel.layer.masksToBounds = true
         
         self.completeBtn.layer.cornerRadius = 20
         
@@ -146,7 +155,7 @@ extension SignupViewController {
         let duration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as! Double
         let curve = notification.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as! UInt
         UIView.animate(withDuration: duration, delay: 0, options: .init(rawValue: curve), animations: {
-            self.backgroundView.transform = .init(translationX: 0, y: -160)
+            self.backgroundView.transform = .init(translationX: 0, y: -175)
         })
     }
     
