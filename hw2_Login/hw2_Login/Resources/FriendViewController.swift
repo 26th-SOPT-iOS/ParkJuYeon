@@ -11,20 +11,20 @@ import UIKit
 class FriendViewController: UIViewController {
     
     @IBOutlet weak var friendTableView: UITableView!
-    @IBOutlet weak var settingImg: UIImageView!
     
-    private var friendInformations: [FriendInformation] = []
+    private var pickerController = UIImagePickerController()
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setfriendInformations()
-        
+       
         friendTableView.dataSource = self
         friendTableView.delegate = self
         
         self.friendTableView.separatorStyle = UITableViewCell.SeparatorStyle.none
-
-       
+        
+        pickerController.delegate = self
+        
     }
     
     func showAlert(style: UIAlertController.Style){
@@ -46,50 +46,44 @@ class FriendViewController: UIViewController {
     @IBAction func settingBtn(_ sender: Any) {
         
         showAlert(style: .actionSheet)
-    
-    }
-    
-        private func setfriendInformations(){
-        let friend1 = FriendInformation(friend: .cat, name: "냥냥이", title: "애옹애오애옹애옹")
-        let friend2 = FriendInformation(friend: .dog, name: "강아지", title: "왈왈!!멍멍ㅇ머머!왋멍!")
-        let friend3 = FriendInformation(friend: .cat, name: "냥냥이", title: "애옹애오애옹애옹")
-        let friend4 = FriendInformation(friend: .dog, name: "강아지", title: "왈왈!!멍멍ㅇ머머!왋멍!")
-        let friend5 = FriendInformation(friend: .cat, name: "냥냥이", title: "애옹애오애옹애옹")
-        let friend6 = FriendInformation(friend: .dog, name: "강아지", title: "왈왈!!멍멍ㅇ머머!왋멍!")
-        let friend7 = FriendInformation(friend: .cat, name: "냥냥이", title: "애옹애오애옹애옹")
-        let friend8 = FriendInformation(friend: .dog, name: "강아지", title: "왈왈!!멍멍ㅇ머머!왋멍!")
-        let friend9 = FriendInformation(friend: .cat, name: "냥냥이", title: "애옹애오애옹애옹")
-        let friend10 = FriendInformation(friend: .dog, name: "강아지", title: "왈왈!!멍멍ㅇ머머!왋멍!")
-        let friend11 = FriendInformation(friend: .cat, name: "냥냥이", title: "애옹애오애옹애옹")
-        let friend12 = FriendInformation(friend: .dog, name: "강아지", title: "왈왈!!멍멍ㅇ머머!왋멍!")
-        let friend13 = FriendInformation(friend: .cat, name: "냥냥이", title: "애옹애오애옹애옹")
-        let friend14 = FriendInformation(friend: .dog, name: "강아지", title: "왈왈!!멍멍ㅇ머머!왋멍!")
-        let friend15 = FriendInformation(friend: .cat, name: "냥냥이", title: "애옹애오애옹애옹")
-        let friend16 = FriendInformation(friend: .dog, name: "강아지", title: "왈왈!!멍멍ㅇ머머!왋멍!")
-        let friend17 = FriendInformation(friend: .cat, name: "냥냥이", title: "애옹애오애옹애옹")
-        let friend18 = FriendInformation(friend: .dog, name: "강아지", title: "왈왈!!멍멍ㅇ머머!왋멍!")
-        let friend19 = FriendInformation(friend: .cat, name: "냥냥이", title: "애옹애오애옹애옹")
-        let friend20 = FriendInformation(friend: .dog, name: "강아지", title: "왈왈!!멍멍ㅇ머머!왋멍!")
-        
-        friendInformations = [friend1, friend2, friend3, friend4, friend5, friend6, friend7, friend8, friend9, friend10, friend11, friend12, friend13, friend14, friend15, friend16, friend17, friend18, friend19, friend20]
         
     }
-    
-    
+  
 }
-extension FriendViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return friendInformations.count
-    }
+
+extension FriendViewController: UITableViewDataSource, UITableViewDelegate{
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+           return 2
+       }
+       
+//       func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//           return 62 }
+    
+   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+       if section == 0 { return 1 }
+       else { return 10 }
+   }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let FriendCell = tableView.dequeueReusableCell(withIdentifier: FriendCell.identifier, for:
-            indexPath) as? FriendCell else { return UITableViewCell() }
-        FriendCell.setFriendInformation(friendImgName:
-            friendInformations[indexPath.row].friend.getImageName(),
-                                        name: friendInformations[indexPath.row].name,
-                                        title: friendInformations[indexPath.row].title)
-        return FriendCell
+        
+        if indexPath.section == 0 {
+        guard let myProfileCell = tableView.dequeueReusableCell(withIdentifier: MyProfileCell.identifier, for:
+            indexPath) as? MyProfileCell else { return UITableViewCell() }
+            
+            myProfileCell.indexPath = indexPath
+            myProfileCell.delegate = self
+            myProfileCell.selectionStyle = .none
+            //myProfileCell.nameLabel = "연블루"
+        return myProfileCell
+        }
+            else {
+                guard let friendCell = tableView.dequeueReusableCell(withIdentifier: FriendCell.identifier) as? FriendCell else { return UITableViewCell() }
+                friendCell.selectionStyle = .none
+                //friendCell.name = "박솝트"
+                //friendCell.message = "왈왈멍멍ㅁ!!ㅁ얾왊어엉머어"
+                return friendCell
+            }
         
     }
     
@@ -100,16 +94,42 @@ extension FriendViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath){
         
         if(editingStyle == .delete){
-            friendInformations.remove(at: indexPath.row)
+           // friendInformations.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .bottom)
             
         }
     }
-    
-    
+
 }
 
-extension FriendViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 62 }
+
+extension FriendViewController: ButtonDelegate {
+    func onClickCellButton(in index: Int) {
+        let alertController = UIAlertController(title: "사진 선택", message: "사진을 선택하세요", preferredStyle: .actionSheet)
+        let galleryAction = UIAlertAction(title: "사진앨범", style: .default) { action in
+            self.openLibrary()
+        }
+        let photoAcgtion = UIAlertAction(title: "카메라", style: .default) { action in
+            self.openCamera()
+        }
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        alertController.addAction(galleryAction)
+        alertController.addAction(photoAcgtion)
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+}
+
+// Gallery,Camera 접근 코드
+extension FriendViewController:UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+     
+    func openLibrary(){
+        pickerController.sourceType = .photoLibrary
+        self.present(pickerController, animated: true, completion: nil)
+    }
+    
+    func openCamera(){
+        pickerController.sourceType = .camera
+        self.present(pickerController, animated: true, completion: nil)
+    }
 }

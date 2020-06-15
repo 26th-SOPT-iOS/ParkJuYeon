@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F0DED35249765B600F198A2 /* MyProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0DED34249765B600F198A2 /* MyProfileCell.swift */; };
 		7F2A49B42459B015000AD982 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2A49B32459B015000AD982 /* AppDelegate.swift */; };
 		7F2A49B62459B015000AD982 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2A49B52459B015000AD982 /* SceneDelegate.swift */; };
 		7F2A49B82459B015000AD982 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2A49B72459B015000AD982 /* LoginViewController.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7F0DED34249765B600F198A2 /* MyProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileCell.swift; sourceTree = "<group>"; };
 		7F2A49B02459B015000AD982 /* hw2_Login.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hw2_Login.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F2A49B32459B015000AD982 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F2A49B52459B015000AD982 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,7 +47,7 @@
 		7F4564F9246FD707007D52D7 /* SignupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupService.swift; sourceTree = "<group>"; };
 		7F4564FB246FD71B007D52D7 /* SignupData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupData.swift; sourceTree = "<group>"; };
 		7FAB933C246C06A800DC192A /* FriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FriendViewController.swift; path = hw2_Login/Resources/FriendViewController.swift; sourceTree = SOURCE_ROOT; };
-		7FAB933E246C10B700DC192A /* FriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FriendCell.swift; path = hw2_Login/Resources/FriendCell.swift; sourceTree = SOURCE_ROOT; };
+		7FAB933E246C10B700DC192A /* FriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FriendCell.swift; path = hw2_Login/TableViewCell/FriendCell.swift; sourceTree = SOURCE_ROOT; };
 		7FAB9340246C12A000DC192A /* FriendInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FriendInformation.swift; path = hw2_Login/Resources/FriendInformation.swift; sourceTree = SOURCE_ROOT; };
 		B12A824AD73BEDB007539947 /* Pods-hw2_Login.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hw2_Login.debug.xcconfig"; path = "Target Support Files/Pods-hw2_Login/Pods-hw2_Login.debug.xcconfig"; sourceTree = "<group>"; };
 		D278764AF9D22ECF48ADADF2 /* Pods-hw2_Login.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hw2_Login.release.xcconfig"; path = "Target Support Files/Pods-hw2_Login/Pods-hw2_Login.release.xcconfig"; sourceTree = "<group>"; };
@@ -70,6 +72,15 @@
 				E66AAE4F888607E3258558C5 /* Pods_hw2_Login.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7F0DED31249764ED00F198A2 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				7FAB933E246C10B700DC192A /* FriendCell.swift */,
+				7F0DED34249765B600F198A2 /* MyProfileCell.swift */,
+			);
+			path = TableViewCell;
 			sourceTree = "<group>";
 		};
 		7F2A49A72459B015000AD982 = {
@@ -97,6 +108,7 @@
 				7F4564EF246FADFE007D52D7 /* Sources */,
 				7F4564EE246FAD7F007D52D7 /* Storyboards */,
 				7F2A49C82459B02A000AD982 /* ViewControllers */,
+				7F0DED31249764ED00F198A2 /* TableViewCell */,
 				7F2A49C12459B016000AD982 /* Info.plist */,
 			);
 			path = hw2_Login;
@@ -115,7 +127,6 @@
 			isa = PBXGroup;
 			children = (
 				7FAB9340246C12A000DC192A /* FriendInformation.swift */,
-				7FAB933E246C10B700DC192A /* FriendCell.swift */,
 				7FAB933C246C06A800DC192A /* FriendViewController.swift */,
 				7F2A49CA2459EC25000AD982 /* MainViewController.swift */,
 				7F2A49B72459B015000AD982 /* LoginViewController.swift */,
@@ -291,6 +302,7 @@
 				7F4564F7246FC51D007D52D7 /* LoginService.swift in Sources */,
 				7F4564F1246FBBC7007D52D7 /* APIConstants.swift in Sources */,
 				7F2A49CD2459EC97000AD982 /* SignupViewController.swift in Sources */,
+				7F0DED35249765B600F198A2 /* MyProfileCell.swift in Sources */,
 				7F2A49B62459B015000AD982 /* SceneDelegate.swift in Sources */,
 				7F2A49CB2459EC25000AD982 /* MainViewController.swift in Sources */,
 			);

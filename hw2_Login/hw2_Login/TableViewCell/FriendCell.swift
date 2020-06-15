@@ -11,7 +11,8 @@ import UIKit
 class FriendCell: UITableViewCell {
     static let identifier: String = "FriendCell"
 
-    @IBOutlet weak var friendImg: UIImageView!
+
+
     @IBOutlet weak var friendName: UILabel!
     @IBOutlet weak var friendLabel: UILabel!
     
@@ -26,10 +27,13 @@ class FriendCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setFriendInformation(friendImgName: String, name: String, title: String){
-        friendImg.image = UIImage(named: friendImgName)
+    func setFriendInformation(imageBtn: String, name: String, title: String){
+         
         friendName.text = name
         friendLabel.text = title
     }
-
+    
+    @IBAction func imageButton(_ sender: Any) {
+    }
+    
 }
