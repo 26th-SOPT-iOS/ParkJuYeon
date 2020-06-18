@@ -27,6 +27,42 @@ class FriendViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+    
+        //친구 뷰가 화면에 보이기 직전에 profile data 받아오는 작업
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
+        lookupProfile()
+        
+    }
+    
+    private func lookupProfile() {
+        guard let token = UserDefaults.standard.object(forKey: "token") as? String else { return }
+        LookupService.shared.lookup(token) { networkResult in
+            switch networkResult {
+                
+            case .success(let profileData):
+                guard let profileData = profileData as? UserDetailProfile else { return }
+                
+                print(profileData.image)
+                
+                let image = UIImageView()
+                
+                image.setImage(from: profileData.image) { image in
+                    guard let profileCell = self.friendTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? MyProfileCell else { return }
+                    DispatchQueue.main.async { profileCell.profileImage = image }
+                }
+            case .requestErr(let message): print(message)
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("ServerErr")
+            case .networkFail:
+                print("networkReult")
+            }
+        }
+    }
+    
     func showAlert(style: UIAlertController.Style){
         let optionMenu = UIAlertController(title: nil, message: "Choose Option", preferredStyle: style)
         
@@ -56,9 +92,6 @@ extension FriendViewController: UITableViewDataSource, UITableViewDelegate{
     func numberOfSections(in tableView: UITableView) -> Int {
            return 2
        }
-       
-//       func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//           return 62 }
     
    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        if section == 0 { return 1 }
@@ -74,17 +107,16 @@ extension FriendViewController: UITableViewDataSource, UITableViewDelegate{
             myProfileCell.indexPath = indexPath
             myProfileCell.delegate = self
             myProfileCell.selectionStyle = .none
-            //myProfileCell.nameLabel = "연블루"
+            myProfileCell.name = "연블루"
         return myProfileCell
         }
             else {
                 guard let friendCell = tableView.dequeueReusableCell(withIdentifier: FriendCell.identifier) as? FriendCell else { return UITableViewCell() }
                 friendCell.selectionStyle = .none
-                //friendCell.name = "박솝트"
-                //friendCell.message = "왈왈멍멍ㅁ!!ㅁ얾왊어엉머어"
+                friendCell.name = "노홍철"
+                friendCell.message = "왈왈멍멍ㅁ!!ㅁ얾왊어엉머어"
                 return friendCell
             }
-        
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -122,7 +154,8 @@ extension FriendViewController: ButtonDelegate {
 
 // Gallery,Camera 접근 코드
 extension FriendViewController:UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-     
+    
+    
     func openLibrary(){
         pickerController.sourceType = .photoLibrary
         self.present(pickerController, animated: true, completion: nil)
@@ -132,4 +165,28 @@ extension FriendViewController:UIImagePickerControllerDelegate, UINavigationCont
         pickerController.sourceType = .camera
         self.present(pickerController, animated: true, completion: nil)
     }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage, let url = info[UIImagePickerController.InfoKey.imageURL] as? URL {
+            guard let token = UserDefaults.standard.object(forKey: "token") as? String else { return }
+            UploadService.shared.uploadImage(token, image, url.lastPathComponent) { networkResult in
+                switch networkResult {
+                    
+                case .success(let profileData):
+                    guard let profileData = profileData as? [UserProfile] else { return }
+                    print(profileData[0].profile)
+                case .requestErr(let failMessage):
+                    guard let message = failMessage as? String else { return }
+                        print(message)
+                case .pathErr:
+                        print("pathErr")
+                case .serverErr:
+                        print("serverErr")
+                case .networkFail:
+                        print("networkFail")
+                }
+            }
+    guard let profileCell = friendTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? MyProfileCell else { return }
+    profileCell.profileImage = image }
+    dismiss(animated: true, completion: nil) }
 }

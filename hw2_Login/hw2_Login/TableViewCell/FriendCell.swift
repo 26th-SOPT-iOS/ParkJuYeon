@@ -11,10 +11,34 @@ import UIKit
 class FriendCell: UITableViewCell {
     static let identifier: String = "FriendCell"
 
-
-
+    @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var friendName: UILabel!
     @IBOutlet weak var friendLabel: UILabel!
+    
+    var imageName: String? {
+        didSet {
+            if let imageName = imageName {
+                guard let image = UIImage(named: imageName) else { return }
+                profileImageView.image = image
+            }
+        }
+    }
+    
+    var name: String? {
+        didSet {
+            if let name = name {
+                friendName.text = name
+            }
+        }
+    }
+    
+    var message: String? {
+        didSet {
+            if let message = message {
+                friendLabel.text = message
+            }
+        }
+    }
     
     override func awakeFromNib() {
     super.awakeFromNib()
@@ -25,15 +49,6 @@ class FriendCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
-    }
-    
-    func setFriendInformation(imageBtn: String, name: String, title: String){
-         
-        friendName.text = name
-        friendLabel.text = title
-    }
-    
-    @IBAction func imageButton(_ sender: Any) {
     }
     
 }

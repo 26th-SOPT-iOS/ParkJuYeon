@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3AA-ym-grE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6LU-eq-ib5">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -649,7 +649,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="왈왈!!멍멍ㅇ머머!왋멍!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uQb-TF-j0z">
-                                                    <rect key="frame" x="254.33333333333334" y="18" width="108.66666666666666" height="26"/>
+                                                    <rect key="frame" x="254.33333333333334" y="24" width="108.66666666666666" height="14.333333333333336"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="14.33" id="i2b-CK-Mh4"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.50588235290000005" green="0.50588235290000005" blue="0.50588235290000005" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -657,37 +660,34 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="냥냥이" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iMo-Fy-LBw">
                                                     <rect key="frame" x="74" y="17" width="44.333333333333343" height="26"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="26" id="K5Q-Vg-a63"/>
+                                                        <constraint firstAttribute="height" constant="26" id="brJ-Gk-qRG"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.15294117647058825" green="0.15294117647058825" blue="0.15294117647058825" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3m3-T9-3kw">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile8Img" translatesAutoresizingMaskIntoConstraints="NO" id="7jk-0o-rFI">
                                                     <rect key="frame" x="16" y="6" width="50" height="50"/>
-                                                    <state key="normal" image="profile8Img"/>
-                                                    <connections>
-                                                        <action selector="imageButton:" destination="YTS-9J-tDs" eventType="touchUpInside" id="9Vd-k1-v2X"/>
-                                                    </connections>
-                                                </button>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="7jk-0o-rFI" secondAttribute="height" multiplier="1:1" id="99K-F9-HtK"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="3m3-T9-3kw" firstAttribute="leading" secondItem="xwV-8p-XT9" secondAttribute="leading" constant="16" id="AxQ-BT-xut"/>
-                                                <constraint firstItem="3m3-T9-3kw" firstAttribute="top" secondItem="xwV-8p-XT9" secondAttribute="top" constant="6" id="CTU-Wa-KJC"/>
-                                                <constraint firstItem="uQb-TF-j0z" firstAttribute="top" secondItem="xwV-8p-XT9" secondAttribute="top" constant="18" id="Fhh-qA-AA4"/>
-                                                <constraint firstAttribute="bottom" secondItem="3m3-T9-3kw" secondAttribute="bottom" constant="6" id="Iaq-of-fZG"/>
-                                                <constraint firstAttribute="trailing" secondItem="uQb-TF-j0z" secondAttribute="trailing" constant="12" id="MDh-ht-1w3"/>
-                                                <constraint firstItem="iMo-Fy-LBw" firstAttribute="top" secondItem="xwV-8p-XT9" secondAttribute="top" constant="17" id="dzn-xK-Jf4"/>
-                                                <constraint firstItem="iMo-Fy-LBw" firstAttribute="leading" secondItem="3m3-T9-3kw" secondAttribute="trailing" constant="8" id="tsr-NM-kLh"/>
-                                                <constraint firstItem="uQb-TF-j0z" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iMo-Fy-LBw" secondAttribute="trailing" constant="8" symbolic="YES" id="vxq-rU-hHX"/>
+                                                <constraint firstItem="iMo-Fy-LBw" firstAttribute="top" secondItem="xwV-8p-XT9" secondAttribute="top" constant="17" id="2bm-qf-ddi"/>
+                                                <constraint firstAttribute="bottom" secondItem="7jk-0o-rFI" secondAttribute="bottom" constant="6" id="7ax-eQ-4mI"/>
+                                                <constraint firstItem="uQb-TF-j0z" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iMo-Fy-LBw" secondAttribute="trailing" constant="8" symbolic="YES" id="AYc-3v-rZe"/>
+                                                <constraint firstItem="7jk-0o-rFI" firstAttribute="top" secondItem="xwV-8p-XT9" secondAttribute="top" constant="6" id="CdM-22-WCy"/>
+                                                <constraint firstItem="7jk-0o-rFI" firstAttribute="leading" secondItem="xwV-8p-XT9" secondAttribute="leading" constant="16" id="Z52-tD-Jq9"/>
+                                                <constraint firstItem="uQb-TF-j0z" firstAttribute="top" secondItem="xwV-8p-XT9" secondAttribute="top" constant="24" id="hR9-7v-d4b"/>
+                                                <constraint firstAttribute="trailing" secondItem="uQb-TF-j0z" secondAttribute="trailing" constant="12" id="rhf-NX-Rey"/>
+                                                <constraint firstItem="iMo-Fy-LBw" firstAttribute="leading" secondItem="7jk-0o-rFI" secondAttribute="trailing" constant="8" id="syH-HQ-jps"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <constraints>
-                                            <constraint firstItem="uQb-TF-j0z" firstAttribute="centerY" secondItem="YTS-9J-tDs" secondAttribute="centerY" id="YOd-vb-F45"/>
-                                        </constraints>
                                         <connections>
                                             <outlet property="friendLabel" destination="uQb-TF-j0z" id="YaW-bE-gF0"/>
                                             <outlet property="friendName" destination="iMo-Fy-LBw" id="WSd-3n-X2j"/>
+                                            <outlet property="profileImageView" destination="7jk-0o-rFI" id="BUm-1v-4Xb"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

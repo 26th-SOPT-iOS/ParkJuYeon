@@ -22,6 +22,18 @@ class MyProfileCell: UITableViewCell {
     var delegate: ButtonDelegate?
     var indexPath: IndexPath?
     
+    var name: String? {
+        didSet {
+            if let name = name { nameLabel.text = name }
+        }
+    }
+    
+    var profileImage: UIImage? {
+        didSet {
+            myProfileBtn.setImage(profileImage, for: .normal)
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

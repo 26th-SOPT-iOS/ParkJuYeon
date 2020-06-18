@@ -24,6 +24,9 @@
 		7F4564F7246FC51D007D52D7 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4564F6246FC51D007D52D7 /* LoginService.swift */; };
 		7F4564FA246FD707007D52D7 /* SignupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4564F9246FD707007D52D7 /* SignupService.swift */; };
 		7F4564FC246FD71B007D52D7 /* SignupData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4564FB246FD71B007D52D7 /* SignupData.swift */; };
+		7F9EDCCF249A8EAE006641F4 /* ProfilelmageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9EDCCE249A8EAE006641F4 /* ProfilelmageData.swift */; };
+		7F9EDCD1249A9058006641F4 /* LookupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9EDCD0249A9058006641F4 /* LookupService.swift */; };
+		7F9EDCD4249A9393006641F4 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9EDCD3249A9393006641F4 /* UIImageView+Extensions.swift */; };
 		7FAB933D246C06A800DC192A /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAB933C246C06A800DC192A /* FriendViewController.swift */; };
 		7FAB933F246C10B700DC192A /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAB933E246C10B700DC192A /* FriendCell.swift */; };
 		7FAB9341246C12A000DC192A /* FriendInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAB9340246C12A000DC192A /* FriendInformation.swift */; };
@@ -50,6 +53,9 @@
 		7F4564F6246FC51D007D52D7 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		7F4564F9246FD707007D52D7 /* SignupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupService.swift; sourceTree = "<group>"; };
 		7F4564FB246FD71B007D52D7 /* SignupData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupData.swift; sourceTree = "<group>"; };
+		7F9EDCCE249A8EAE006641F4 /* ProfilelmageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilelmageData.swift; sourceTree = "<group>"; };
+		7F9EDCD0249A9058006641F4 /* LookupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookupService.swift; sourceTree = "<group>"; };
+		7F9EDCD3249A9393006641F4 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		7FAB933C246C06A800DC192A /* FriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FriendViewController.swift; path = hw2_Login/Resources/FriendViewController.swift; sourceTree = SOURCE_ROOT; };
 		7FAB933E246C10B700DC192A /* FriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FriendCell.swift; path = hw2_Login/TableViewCell/FriendCell.swift; sourceTree = SOURCE_ROOT; };
 		7FAB9340246C12A000DC192A /* FriendInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FriendInformation.swift; path = hw2_Login/Resources/FriendInformation.swift; sourceTree = SOURCE_ROOT; };
@@ -151,6 +157,7 @@
 		7F4564EF246FADFE007D52D7 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				7F9EDCD2249A9371006641F4 /* Extensions */,
 				7F2A49B32459B015000AD982 /* AppDelegate.swift */,
 				7F2A49B52459B015000AD982 /* SceneDelegate.swift */,
 			);
@@ -168,8 +175,18 @@
 				7F4564F6246FC51D007D52D7 /* LoginService.swift */,
 				7F0DED362497729F00F198A2 /* ProfileData.swift */,
 				7F0DED382497730B00F198A2 /* UploadService.swift */,
+				7F9EDCCE249A8EAE006641F4 /* ProfilelmageData.swift */,
+				7F9EDCD0249A9058006641F4 /* LookupService.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		7F9EDCD2249A9371006641F4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7F9EDCD3249A9393006641F4 /* UIImageView+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		F692D32F3BAD5632E04107EB /* Pods */ = {
@@ -298,12 +315,15 @@
 			files = (
 				7F0DED392497730B00F198A2 /* UploadService.swift in Sources */,
 				7FAB9341246C12A000DC192A /* FriendInformation.swift in Sources */,
+				7F9EDCCF249A8EAE006641F4 /* ProfilelmageData.swift in Sources */,
+				7F9EDCD1249A9058006641F4 /* LookupService.swift in Sources */,
 				7F4564FC246FD71B007D52D7 /* SignupData.swift in Sources */,
 				7FAB933F246C10B700DC192A /* FriendCell.swift in Sources */,
 				7F4564F5246FBD9C007D52D7 /* NetworkResult.swift in Sources */,
 				7FAB933D246C06A800DC192A /* FriendViewController.swift in Sources */,
 				7F2A49B82459B015000AD982 /* LoginViewController.swift in Sources */,
 				7F2A49B42459B015000AD982 /* AppDelegate.swift in Sources */,
+				7F9EDCD4249A9393006641F4 /* UIImageView+Extensions.swift in Sources */,
 				7F0DED372497729F00F198A2 /* ProfileData.swift in Sources */,
 				7F4564F3246FBCA4007D52D7 /* SigninData.swift in Sources */,
 				7F4564FA246FD707007D52D7 /* SignupService.swift in Sources */,
